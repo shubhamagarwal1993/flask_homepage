@@ -6,7 +6,7 @@ from app.forms import LoginForm
 @app.route('/index')
 def index():
     user = {'username': 'Nikilesh'}
-    return render_template('index.html', title='Home', user=user)
+    return render_template('index.html', title='Home')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -15,4 +15,4 @@ def login():
         # Check for username and password
         if form.username.data == "" and form.password.data == "":
             return redirect(url_for('index'))
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template('index.html', title='Sign In', form=form)
